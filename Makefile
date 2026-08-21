@@ -6,7 +6,7 @@
 #    By: yuito <yuito@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/21 18:42:29 by yuito             #+#    #+#              #
-#    Updated: 2026/08/21 18:42:33 by yuito            ###   ########.fr        #
+#    Updated: 2026/08/21 18:49:48 by yuito            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,10 +66,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(OBJ_DIR)/checker_bonus.o: $(BONUS_DIR)/checker_bonus.c
-SHARED_FILES	:= \
-	core/parse_tokens.c \
-	core/init.c \ $(HEADER)
+$(OBJ_DIR)/checker_bonus.o: $(BONUS_DIR)/checker_bonus.c $(HEADER)
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
